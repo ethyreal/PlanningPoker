@@ -24,5 +24,13 @@ extension UIView {
             child.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insets.right)
         ])
     }
+    
+    public func centerInSuperView() {
+        guard let parent = superview else { return }
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+            centerYAnchor.constraint(equalTo: parent.centerYAnchor)
+        ])
+    }
 }
 
