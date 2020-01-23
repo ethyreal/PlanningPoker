@@ -9,7 +9,7 @@ Simple example of an MVVM+C implementation.
     - Navigation/Routing
     - Networking
 2. Refactor logic item by time towards a goal of MVVM+C.  Each iteration should have:
-    - An issue associated with it
+    - An [issue associated](https://github.com/ethyreal/PlanningPoker/issues) with it
     - Issues can serve as a kind of dev diary
 3. Polish well factored POC into a fully functioning MVP of Planning Poker
 4. Explore evolving this archetecute towards a desclarive and reactive paradigm using Combine and SwiftUI
