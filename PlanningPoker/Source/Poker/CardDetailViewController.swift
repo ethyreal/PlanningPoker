@@ -32,6 +32,7 @@ class CardDetailViewController: UIViewController {
     func setupView() {
         view.backgroundColor = .white
         
+        cardLabel.translatesAutoresizingMaskIntoConstraints = false
         cardLabel.text = model.description
         cardLabel.font = UIFont.boldSystemFont(ofSize: 72)
         cardLabel.sizeToFit()

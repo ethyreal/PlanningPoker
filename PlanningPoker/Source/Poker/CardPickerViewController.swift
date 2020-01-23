@@ -22,7 +22,10 @@ class CardPickerViewController: UICollectionViewController {
     
         self.title = "Planning Poker"
         setupView()
+        
         loadCards()
+        //TODO: uncomment to show error handling on load
+        //showError(nil)
     }
 
     func setupView() {
@@ -42,10 +45,10 @@ class CardPickerViewController: UICollectionViewController {
             switch result {
             case .success(let cards):
                 self?.cards = cards
+                self?.collectionView.reloadData()
             case .failure(let error):
-                print("something when wrong: \(error)")
+                self?.showError(error)
             }
-            self?.collectionView.reloadData()
             self?.hideLoadingView()
         }
     }
@@ -67,6 +70,18 @@ class CardPickerViewController: UICollectionViewController {
         loadingController?.removeFromParent()
         loadingController?.didMove(toParent: nil)
         loadingController = nil
+    }
+    
+    func showError(_ error: Error?) {
+        let alert = UIAlertController(title: "Oh Nos!", message: "Something when terrably wrong, want to try again?", preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Retry?", style: .default) { [weak self] (_) in
+            self?.loadCards()
+        }
+        alert.addAction(action)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
 
 }
