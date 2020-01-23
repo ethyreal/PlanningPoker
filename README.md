@@ -1,5 +1,5 @@
 # PlanningPoker
-Simple example of an MVVM+C implementation
+Simple example of an MVVM+C implementation.
 
 
 ## Project Goals
@@ -8,5 +8,9 @@ Simple example of an MVVM+C implementation
     - Model/Business
     - Navigation/Routing
     - Networking
-2. Refactor logic item by time towards a goal of MVVM+C.  Each iteration should have a write up and release or tag marking the progression.  The goal is to have a reference to refer to later from start to finish
-3. Polish well factored POC into a fully functioning MVP of Planning Poker 
+2. Refactor logic item by time towards a goal of MVVM+C.  Each iteration should have:
+    - An issue associated with it
+    - Issues can serve as a kind of dev diary
+3. Polish well factored POC into a fully functioning MVP of Planning Poker
+4. Explore evolving this archetecute towards a desclarive and reactive paradigm using Combine and SwiftUI
+5. Make the case for MVVM as a prefered transitional design pattern that is useful for a UIKit world and later for a SwiftUI world
