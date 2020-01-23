@@ -13,7 +13,7 @@ class AppCoordinatorTests: XCTestCase {
 
     func testMainMenuVisableAtLaunch() {
         
-        let app = AppCoordinator()
+        let app = AppCoordinator(with: MockDependencies())
         app.start(animated: false)
         
         guard let nav = app.rootController as? UINavigationController else { XCTFail(); return }
@@ -23,7 +23,7 @@ class AppCoordinatorTests: XCTestCase {
     
     func testShowPlaningPocker() {
 
-        let app = AppCoordinator()
+        let app = AppCoordinator(with: MockDependencies())
         app.start(animated: false)
         app.showPlanningPoker(animated: false)
         
@@ -34,7 +34,7 @@ class AppCoordinatorTests: XCTestCase {
 
     func testShowCardDetail() {
 
-        let app = AppCoordinator()
+        let app = AppCoordinator(with: MockDependencies())
         app.start(animated: false)
         app.showPlanningPoker(animated: false)
         guard let card = Card.allCases.first else { XCTFail(); return }

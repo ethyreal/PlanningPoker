@@ -13,6 +13,13 @@ class AppCoordinator {
     var rootController: UIViewController { return nav }
     let nav = UINavigationController()
     
+    typealias LocalDependencies = CardLoadingProvider
+    let dependencies: LocalDependencies
+    
+    init(with dependencies: LocalDependencies) {
+        self.dependencies = dependencies
+    }
+    
     @discardableResult
     func start(animated: Bool) -> Bool {
         showMenu(animated: animated)
@@ -29,7 +36,7 @@ class AppCoordinator {
     
     func showPlanningPoker(animated: Bool) {
         
-        let poker = CardPickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let poker = CardPickerViewController(with: dependencies)
         poker.onCardSelect = { [weak self] (card) in
             self?.showCardDetail(card, animated: true)
         }

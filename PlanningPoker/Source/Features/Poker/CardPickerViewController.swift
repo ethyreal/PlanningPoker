@@ -13,12 +13,23 @@ class CardPickerViewController: UICollectionViewController {
     var onCardSelect: (Card) -> Void = { _ in }
     
     var cards: [Card] = []
-    private let service = PokerService()
+    private let service: CardLoading
     private var loadingController: LoadingViewController?
     
     private let sectionInsets = UIEdgeInsets(top: 50, left: 20, bottom: 50, right: 20)
     private let cardsPerRow = 3.0
     
+    typealias LocalDependencies = CardLoadingProvider
+    
+    init(with dependencies: LocalDependencies) {
+        self.service = dependencies.cardLoadingService
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -135,12 +146,3 @@ extension CardPickerViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-class PokerService {
-
-    func loadCards(_ completion: @escaping (Result<[Card], Error>) -> Void) {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            completion(.success(Card.allCases))
-        }
-    }
-}
