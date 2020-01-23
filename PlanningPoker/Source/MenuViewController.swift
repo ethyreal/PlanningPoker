@@ -10,6 +10,9 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+
+    var onPokerSelect: () -> Void = {}
+    
     var container: UIStackView = {
         let v = UIStackView.init(frame: .zero)
         v.axis = .vertical
@@ -35,8 +38,7 @@ class MenuViewController: UIViewController {
     
 
     @objc func showPoker() {
-        let poker = CardPickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        navigationController?.pushViewController(poker, animated: true)
+        onPokerSelect()
     }
 }
 

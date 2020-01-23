@@ -10,6 +10,8 @@ import UIKit
 
 class CardPickerViewController: UICollectionViewController {
 
+    var onCardSelect: (Card) -> Void = { _ in }
+    
     var cards: [Card] = []
     private let service = PokerService()
     private var loadingController: LoadingViewController?
@@ -34,11 +36,6 @@ class CardPickerViewController: UICollectionViewController {
         collectionView.register(CardCell.self, forCellWithReuseIdentifier: "cardCell")
     }
     
-    func showCardDetail(_ card: Card) {
-        let vc = CardDetailViewController(card: card)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
     func loadCards() {
         showLoadingView()
         service.loadCards { [weak self] (result) in
@@ -114,7 +111,7 @@ extension CardPickerViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
-        showCardDetail(card)
+        onCardSelect(card)
     }
     
 }
