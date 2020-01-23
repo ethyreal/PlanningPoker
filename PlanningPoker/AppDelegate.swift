@@ -12,16 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var nav: UINavigationController?
+    var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let menu = MenuViewController()
-        let nav = UINavigationController(rootViewController: menu)
-        window?.rootViewController = nav
-        self.nav = nav
+
+        coordinator = AppCoordinator()
+
+        window?.rootViewController = coordinator?.rootController
+        coordinator?.start(animated: false)
         window?.makeKeyAndVisible()
         return true
     }
