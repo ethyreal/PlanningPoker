@@ -13,6 +13,11 @@
 		E7A8388E23D7B55D007DCD19 /* CardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8388D23D7B55D007DCD19 /* CardCellView.swift */; };
 		E7A8389123D8A298007DCD19 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389023D8A298007DCD19 /* LoadingViewController.swift */; };
 		E7A8389323D923B0007DCD19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389223D923B0007DCD19 /* AppCoordinator.swift */; };
+		E7A8389723DA0C29007DCD19 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389623DA0C29007DCD19 /* AppCoordinatorTests.swift */; };
+		E7A8389923DA0E7A007DCD19 /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389823DA0E7A007DCD19 /* MenuTests.swift */; };
+		E7A8389C23DA114D007DCD19 /* UIView+Querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389B23DA114D007DCD19 /* UIView+Querying.swift */; };
+		E7A8389E23DA144B007DCD19 /* CardPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389D23DA144B007DCD19 /* CardPickerTests.swift */; };
+		E7A838A023DA1768007DCD19 /* CardDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389F23DA1768007DCD19 /* CardDetailTests.swift */; };
 		FB1B038A23C3E80300E2EE34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1B038923C3E80300E2EE34 /* AppDelegate.swift */; };
 		FB1B039123C3E80500E2EE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1B039023C3E80500E2EE34 /* Assets.xcassets */; };
 		FB1B039423C3E80500E2EE34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1B039223C3E80500E2EE34 /* LaunchScreen.storyboard */; };
@@ -38,6 +43,11 @@
 		E7A8388D23D7B55D007DCD19 /* CardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellView.swift; sourceTree = "<group>"; };
 		E7A8389023D8A298007DCD19 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E7A8389223D923B0007DCD19 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E7A8389623DA0C29007DCD19 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		E7A8389823DA0E7A007DCD19 /* MenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTests.swift; sourceTree = "<group>"; };
+		E7A8389B23DA114D007DCD19 /* UIView+Querying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Querying.swift"; sourceTree = "<group>"; };
+		E7A8389D23DA144B007DCD19 /* CardPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerTests.swift; sourceTree = "<group>"; };
+		E7A8389F23DA1768007DCD19 /* CardDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTests.swift; sourceTree = "<group>"; };
 		FB1B038623C3E80300E2EE34 /* PlanningPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1B038923C3E80300E2EE34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB1B039023C3E80500E2EE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +102,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		E7A8389A23DA112C007DCD19 /* TestingTools */ = {
+			isa = PBXGroup;
+			children = (
+				E7A8389B23DA114D007DCD19 /* UIView+Querying.swift */,
+			);
+			path = TestingTools;
+			sourceTree = "<group>";
+		};
 		FB1B037D23C3E80300E2EE34 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +143,13 @@
 		FB1B039D23C3E80500E2EE34 /* PlanningPokerTests */ = {
 			isa = PBXGroup;
 			children = (
+				E7A8389A23DA112C007DCD19 /* TestingTools */,
 				FB1B039E23C3E80500E2EE34 /* PlanningPokerTests.swift */,
 				FB1B03A023C3E80500E2EE34 /* Info.plist */,
+				E7A8389623DA0C29007DCD19 /* AppCoordinatorTests.swift */,
+				E7A8389823DA0E7A007DCD19 /* MenuTests.swift */,
+				E7A8389D23DA144B007DCD19 /* CardPickerTests.swift */,
+				E7A8389F23DA1768007DCD19 /* CardDetailTests.swift */,
 			);
 			path = PlanningPokerTests;
 			sourceTree = "<group>";
@@ -270,6 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A838A023DA1768007DCD19 /* CardDetailTests.swift in Sources */,
+				E7A8389C23DA114D007DCD19 /* UIView+Querying.swift in Sources */,
+				E7A8389723DA0C29007DCD19 /* AppCoordinatorTests.swift in Sources */,
+				E7A8389E23DA144B007DCD19 /* CardPickerTests.swift in Sources */,
+				E7A8389923DA0E7A007DCD19 /* MenuTests.swift in Sources */,
 				FB1B039F23C3E80500E2EE34 /* PlanningPokerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
