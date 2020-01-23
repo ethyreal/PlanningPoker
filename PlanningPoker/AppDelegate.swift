@@ -13,12 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: AppCoordinator?
-
+    let dependencies: Dependencies
+    
+    override init() {
+        self.dependencies = Dependencies()
+        super.init()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        coordinator = AppCoordinator()
+        coordinator = AppCoordinator(with: dependencies)
 
         window?.rootViewController = coordinator?.rootController
         coordinator?.start(animated: false)

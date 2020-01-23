@@ -14,20 +14,35 @@ class CardPickerTests: XCTestCase {
     func testCardsLoad() {
         
         let exp = expectation(description: "loading")
-        
-        let sut = CardPickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let dependencies = MockDependencies()
+        dependencies.pokerService.result = .success(Card.allCases)
+        dependencies.pokerService.onComplete = { _ in
+            exp.fulfill()
+        }
+        let sut = CardPickerViewController(with: dependencies)
         _ = sut.view
 
         XCTAssert(sut.cards.count == 0)
 
-        // at the moment no other way to test the loading of cards
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            exp.fulfill()
-        }
-        
         wait(for: [exp], timeout: 10)
         
         XCTAssert(sut.cards.count > 0)
+    }
+
+    func testCardsLoad_failure() {
+        
+        let exp = expectation(description: "loading")
+        let dependencies = MockDependencies()
+        dependencies.pokerService.result = .failure(MockError.networkError)
+        dependencies.pokerService.onComplete = { _ in
+            exp.fulfill()
+        }
+        let sut = CardPickerViewController(with: dependencies)
+        _ = sut.view
+
+        XCTAssert(sut.cards.count == 0)
+        wait(for: [exp], timeout: 10)
+        XCTAssert(sut.cards.count == 0)
     }
 
 }
