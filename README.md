@@ -4,7 +4,7 @@ Simple example of an MVVM+C implementation.
 
 ## Project Goals
 
-1. Create a non trivial app using MVC as given by apple.  Build up "massive view controllers" or at least tightly coupled.  They shoudl have the following inside each UIViewController:
+1. Create a non trivial app using MVC as given by apple.  Build up "massive view controllers" or at least tightly coupled.  They should have the following inside each UIViewController:
     - Model/Business
     - Navigation/Routing
     - Networking
@@ -25,9 +25,9 @@ Simple example of an MVVM+C implementation.
 
 ### Why?
 
-Stengths of using this pattern primarily are:
+Strengths of using this pattern primarily are:
 
-- Seperation of concerns
+- Separation of concerns
 - Easy to reason about
 - Testability
 
@@ -43,8 +43,14 @@ Model <-> ViewModel <-> View
 
 The Model and View never actually talk to each other.
 
-We use a `State` type to represent a view's well state.  This creates a unidirectional data flow for View updates that goes from Model -> ViewModel -> State -> View.  There is also a parallel flow that handles updates from the user(view) like this:  View -> ViewModel -> Service -> Model
+We can use a `State` type to represent a view's ... well state.  This creates a unidirectional data flow for UI updates:
 
-An illustraction of these flows:
+`Model -> ViewModel -> State -> View`.  
+
+There is also a parallel flow that handles updates or actions from the user in the view:
+
+`View -> ViewModel -> Service -> Model`
+
+An illustration of these data flows:
 
 ![MVVM+C](documentation/images/MVVM+C.png)
