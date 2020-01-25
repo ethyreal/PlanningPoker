@@ -47,4 +47,4 @@ We use a `State` type to represent a view's well state.  This creates a unidirec
 
 An illustraction of these flows:
 
-![MVVM+C](docs/images/MVVM+C.png)
+![MVVM+C](documentation/images/MVVM+C.png)
