@@ -14,3 +14,37 @@ Simple example of an MVVM+C implementation.
 3. Polish well factored POC into a fully functioning MVP of Planning Poker
 4. Explore evolving this archetecute towards a desclarive and reactive paradigm using Combine and SwiftUI
 5. Make the case for MVVM as a prefered transitional design pattern that is useful for a UIKit world and later for a SwiftUI world
+
+
+### What is MVVM?
+
+
+> The Model-View-ViewModel (MVVM) pattern helps to cleanly separate the business and presentation logic of an application from its user interface (UI)
+- [Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)
+
+
+### Why?
+
+Stengths of using this pattern primarily are:
+
+- Seperation of concerns
+- Easy to reason about
+- Testability
+
+### How is this done in UIKit?
+
+- Model: Struct/Class 
+- View: UIView(Controller) 
+- ViewModel: Class
+
+### But really it should be written:
+
+Model <-> ViewModel <-> View
+
+The Model and View never actually talk to each other.
+
+We use a `State` type to represent a view's well state.  This creates a unidirectional data flow for View updates that goes from Model -> ViewModel -> State -> View.  There is also a parallel flow that handles updates from the user(view) like this:  View -> ViewModel -> Service -> Model
+
+An illustraction of these flows:
+
+![MVVM+C](docs/images/MVVM+C.png)
