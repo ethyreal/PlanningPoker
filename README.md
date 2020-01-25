@@ -12,7 +12,7 @@ Simple example of an MVVM+C implementation.
     - An [issue associated](https://github.com/ethyreal/PlanningPoker/issues) with it
     - Issues can serve as a kind of dev diary
 3. Polish well factored POC into a fully functioning MVP of Planning Poker
-4. Explore evolving this archetecute towards a desclarive and reactive paradigm using Combine and SwiftUI
+4. Explore evolving this architecture towards a declarative and reactive paradigm using Combine and SwiftUI
 5. Make the case for MVVM as a prefered transitional design pattern that is useful for a UIKit world and later for a SwiftUI world
 
 
