@@ -18,11 +18,11 @@
 		E7A8389C23DA114D007DCD19 /* UIView+Querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389B23DA114D007DCD19 /* UIView+Querying.swift */; };
 		E7A8389E23DA144B007DCD19 /* CardPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389D23DA144B007DCD19 /* CardPickerTests.swift */; };
 		E7A838A023DA1768007DCD19 /* CardDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8389F23DA1768007DCD19 /* CardDetailTests.swift */; };
-		E7A838A523DA33DF007DCD19 /* Depencencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A838A423DA33DF007DCD19 /* Depencencies.swift */; };
 		E7A838A723DA341B007DCD19 /* PokerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A838A623DA341B007DCD19 /* PokerService.swift */; };
 		E7A838AA23DA36EB007DCD19 /* MockDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A838A923DA36EB007DCD19 /* MockDependencies.swift */; };
 		E7A838AC23DA3747007DCD19 /* MockPokerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A838AB23DA3747007DCD19 /* MockPokerService.swift */; };
 		E7A838B023DA79E4007DCD19 /* CardPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A838AF23DA79E4007DCD19 /* CardPickerViewModel.swift */; };
+		E7BD19D2264C1E6900820D05 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD19D1264C1E6900820D05 /* Dependencies.swift */; };
 		FB1B038A23C3E80300E2EE34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1B038923C3E80300E2EE34 /* AppDelegate.swift */; };
 		FB1B039123C3E80500E2EE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1B039023C3E80500E2EE34 /* Assets.xcassets */; };
 		FB1B039423C3E80500E2EE34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1B039223C3E80500E2EE34 /* LaunchScreen.storyboard */; };
@@ -53,11 +53,11 @@
 		E7A8389B23DA114D007DCD19 /* UIView+Querying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Querying.swift"; sourceTree = "<group>"; };
 		E7A8389D23DA144B007DCD19 /* CardPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerTests.swift; sourceTree = "<group>"; };
 		E7A8389F23DA1768007DCD19 /* CardDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTests.swift; sourceTree = "<group>"; };
-		E7A838A423DA33DF007DCD19 /* Depencencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depencencies.swift; sourceTree = "<group>"; };
 		E7A838A623DA341B007DCD19 /* PokerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerService.swift; sourceTree = "<group>"; };
 		E7A838A923DA36EB007DCD19 /* MockDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencies.swift; sourceTree = "<group>"; };
 		E7A838AB23DA3747007DCD19 /* MockPokerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPokerService.swift; sourceTree = "<group>"; };
 		E7A838AF23DA79E4007DCD19 /* CardPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerViewModel.swift; sourceTree = "<group>"; };
+		E7BD19D1264C1E6900820D05 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		FB1B038623C3E80300E2EE34 /* PlanningPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1B038923C3E80300E2EE34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB1B039023C3E80500E2EE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		E7A838A123DA3334007DCD19 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E7A838A323DA33B5007DCD19 /* Dependencies */,
+				E7BD19D0264C1E5200820D05 /* Dependencies */,
 				E75E283023D7810800DC14EC /* UIKit */,
 				E7A8388F23D8A25B007DCD19 /* UI Components */,
 			);
@@ -130,14 +130,6 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		E7A838A323DA33B5007DCD19 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				E7A838A423DA33DF007DCD19 /* Depencencies.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		E7A838A823DA36DD007DCD19 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +137,14 @@
 				E7A838AB23DA3747007DCD19 /* MockPokerService.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E7BD19D0264C1E5200820D05 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				E7BD19D1264C1E6900820D05 /* Dependencies.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		FB1B037D23C3E80300E2EE34 = {
@@ -261,7 +261,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "George Webster";
 				TargetAttributes = {
 					FB1B038523C3E80300E2EE34 = {
@@ -316,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BD19D2264C1E6900820D05 /* Dependencies.swift in Sources */,
 				FBA7D5A223CD162B003C60C0 /* CardPickerViewController.swift in Sources */,
 				FB1B038A23C3E80300E2EE34 /* AppDelegate.swift in Sources */,
 				E75E283323D7815900DC14EC /* UIView+Layout.swift in Sources */,
@@ -326,7 +327,6 @@
 				E7A8388E23D7B55D007DCD19 /* CardCellView.swift in Sources */,
 				E7A838B023DA79E4007DCD19 /* CardPickerViewModel.swift in Sources */,
 				E75E282F23D76E4C00DC14EC /* MenuViewController.swift in Sources */,
-				E7A838A523DA33DF007DCD19 /* Depencencies.swift in Sources */,
 				E7A838A723DA341B007DCD19 /* PokerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +394,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -455,6 +456,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
